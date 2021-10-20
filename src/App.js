@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import LoginComponent from './componentes/login/login';
+import {BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import HomeComponent from './componentes/home/home';
+import RegistroProductoComponent from './componentes/productos/regProductos';
+import GestionProductoComponent from './componentes/productos/lstProductos';
+import GestionUsuariosComponent from './componentes/usuarios/lstUsuarios';
+import RegistroUsuariosComponent from './componentes/usuarios/regUsuarios';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route exact path="/login" component={LoginComponent}></Route>
+          <Route exact path="/home" component={HomeComponent}></Route>
+          <Route exact path="/regProd" component={RegistroProductoComponent}></Route>
+          <Route exact path="/gestionProd" component={GestionProductoComponent}></Route>
+          <Route exact path="/gestoonuser" component={GestionUsuariosComponent}></Route>
+          <Route exact path="/regUsuarios" component={RegistroUsuariosComponent}></Route>
+        </Switch>
+
+      </Router>
+
+    </>
   );
 }
 
